@@ -1,0 +1,11 @@
+let g:yadr_using_unsolarized_terminal = 1
+
+let mapleader = ","
+
+let g:AutoClosePairs = {'(': ')', '{': '}', '[': ']', '"': '"', "'": "'", '#{': '}', '|':'|' }
+let g:AutoCloseProtectedRegions = ["Character"]
+
+let g:CtrlpCustomIgnore = '\v[\/]\.(git|hg|svn)$'
+let g:CtrlpCustomIgnore = 'log'
+set wildignore+=*/log/*
+
