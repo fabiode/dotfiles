@@ -1,14 +1,14 @@
+"set cursorline
 set cursorline
 set termguicolors
 "set t_Co=256
 
 "let g:yadr_disable_solarized_enhancements = 1
 
-let g:gruvbox_italic=1
+colorscheme PaperColor
 
-"colorscheme github
 set background=dark
-colorscheme gruvbox
+let g:ale_set_highlights = 0
 
 if exists(":Tabularize")
   nmap <Leader>a= :Tabularize /=<CR>
@@ -20,6 +20,8 @@ endif
 set noswapfile
 set autoread
 
+set completefunc=syntaxcomplete#Complete
+
 nnoremap ; :
 nnoremap : ;
 vnoremap ; :
@@ -27,7 +29,6 @@ vnoremap : ;
 noremap : ;
 noremap ; :
 
-set guifont=Inconsolata:h20
 set guioptions-=m  "no menu
 set guioptions-=T  "no toolbar
 set guioptions-=l
@@ -78,6 +79,11 @@ nnoremap <leader>l mQviwu`Q
 " upper/lower first char of word
 nnoremap <leader>U mQgewvU`Q
 nnoremap <leader>L mQgewvu`Q
+
+" leader r1, r2, r3 for alphabetically sort ruby methods in range in visual mode
+vnoremap <leader>r1 :'<,'>g/\vdef\ /,/\v^\s*end$/ s/$\n/@@@
+vnoremap <silent> <leader>r2 :'<,'>sort<cr>
+vnoremap <silent> <leader>r3 :'<,'>s/@@@/\r/g<cr>
 
 " cd to the directory containing the file in the buffer
 nnoremap <silent> <leader>cd :lcd %:h<CR>
